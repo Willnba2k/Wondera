@@ -1,46 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Loading TikTok...</title>
+  <title>System Error</title>
   <style>
-    body {
-      background-color: black;
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #0000AA;
       color: white;
-      font-family: monospace;
-      font-size: 20px;
-      text-align: center;
-      padding-top: 100px;
-    }
-    #screamer {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: black;
-      z-index: 9999;
-    }
-    #screamer img {
-      width: 100%;
+      font-family: Consolas, monospace;
+      font-size: 18px;
       height: 100%;
-      object-fit: cover;
+      overflow: hidden;
+    }
+    #container {
+      padding: 50px;
+    }
+    .error-header {
+      font-size: 32px;
+      color: lightgray;
+    }
+    .error-message {
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+    .blinking {
+      animation: blink 1s steps(2, start) infinite;
+    }
+    @keyframes blink {
+      to { visibility: hidden; }
     }
   </style>
 </head>
 <body>
-  <div>Loading TikTok video...</div>
-  <div id="screamer">
-    <img src="https://i.imgur.com/VgXHOkB.jpeg" alt="Scare">
-    <audio id="scream" autoplay>
-      <source src="https://www.soundjay.com/human/sounds/scream-01.mp3" type="audio/mpeg">
-    </audio>
+  <div id="container">
+    <div class="error-header">*** SYSTEM SECURITY BREACH ***</div>
+    <div class="error-message">
+      A critical system vulnerability has been exploited.<br>
+      Unauthorized access detected.<br><br>
+      <strong>STATUS:</strong> COMPROMISED<br>
+      <strong>IP TRACE:</strong> 192.168.0.***<br>
+      <strong>SEVERITY:</strong> HIGH<br><br>
+
+      Your data is no longer secure.<br>
+      The following system components may be affected:<br>
+      - Network stack<br>
+      - Kernel processes<br>
+      - Boot manager<br>
+      - Encrypted volumes<br><br>
+
+      <span class="blinking">_</span>
+    </div>
   </div>
 
-  <script>
-    setTimeout(() => {
-      document.getElementById('screamer').style.display = 'block';
-      document.getElementById('scream').play();
-    }, 4000);
-  </script>
+  <audio autoplay>
+    <source src="https://www.soundjay.com/button/sounds/beep-10.mp3" type="audio/mpeg">
+  </audio>
 </body>
 </html>
